@@ -7,8 +7,85 @@
 body {
   background-color: skyblue;
   font-family: Arial, Helvetica, sans-serif;
+  background-image: url(../public/img/background.jpg);
+  background-position: 50% 50%;
+  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 
-.flash-comp {
-  background-color: aliceblue;
+.app {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.flash-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  width: 80%;
+  padding-top: 50px;
+  margin: auto;
+}
+
+.card {
+  background-color: white;
+  background-image: url(../public/img/card1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 300px;
+  list-style: none;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 1px 0px 1px 1px #f1f1f1;
+  text-align: center;
+  padding: 5px;
+}
+
+.selected {
+  color: white;
+  background-color: red;
+}
+
+@media screen and (max-width: 576px) {
+  .flash-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    width: 160px;
+    height: 160px;
+    margin: 10px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 1px 0px 2px #f1f1f1;
+    text-align: center;
+  }
+}
+
+.text {
+  font-size: 25px;
+  font-weight: 600;
+  position: absolute;
+  bottom: 0%;
+  background-color: #0d0d0d;
+  color: white;
+  padding: 5px;
 }
