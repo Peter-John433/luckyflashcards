@@ -4,7 +4,7 @@ export default function FlashCard({ question }) {
   const [selectedId, setSelectedId] = useState(null);
 
   function touchCard(id) {
-    setSelectedId(id);
+    setSelectedId(id !== selectedId ? id : null);
   }
   return (
     <div>
@@ -13,7 +13,7 @@ export default function FlashCard({ question }) {
           <li
             onClick={() => touchCard(quest.id)}
             key={quest.id}
-            className={quest.id === selectedId ? "card" : ""}
+            className={quest.id === selectedId ? "selected" : "card"}
           >
             {quest.id === selectedId ? quest.answer : quest.question}
           </li>
